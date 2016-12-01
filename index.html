@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Meta Etiquetas -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Introduccion a la Ingenieria</title>
+
+	<!-- Hojas de estilos -->
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
+	<!-- Hojas de Js-->
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+</head>
+<body id="body">
+		<header>
+			<div></div>
+			<div id="date"></div>
+			<div id="tools-system" ><span class="icon-switch" onclick="window.close()"></span></div>
+		</header>
+			<div id="draggable" class="window contacts" style="display:none;">
+				<div class="barra-superior">
+					<input type="file" name="">
+					<p>Alumnos del curso</p>
+					<span id="exit1" class="icon-cancel"></span>				
+				</div>
+				<table border="1">
+					<tr><th>CODIGOS</th><th>NOMBRES COMPLETOS</th><th>ACUMULADO DE NOTAS</th></tr>
+					<tr><td>160003800</td><td>Aguilar Fierro Diego Alejandro</td><td>5.0</td></tr>
+					<tr><td>-</td><td>- - - -</td><td>-</td></tr>
+					<tr><td>-</td><td>- - - -</td><td>-</td></tr>
+					<tr><td>-</td><td>- - - -</td><td>-</td></tr>
+					<tr><td>-</td><td>- - - -</td><td>-</td></tr>
+					<tr><td>-</td><td>- - - -</td><td>-</td></tr>
+					<tr><td>-</td><td>- - - -</td><td>-</td></tr>
+					<tr><td>-</td><td>- - - -</td><td>-</td></tr>
+					<tr><td>-</td><td>- - - -</td><td>-</td></tr>
+					<tr><td>-</td><td>- - - -</td><td>-</td></tr>
+					<tr><td>-</td><td>- - - -</td><td>-</td></tr>
+					<tr><td>-</td><td>- - - -</td><td>-</td></tr>
+					<tr><td>-</td><td>- - - -</td><td>-</td></tr>
+					<tr><td>-</td><td>- - - -</td><td>-</td></tr>
+					<tr><td>-</td><td>- - - -</td><td>-</td></tr>
+					<tr><td>-</td><td>- - - -</td><td>-</td></tr>
+				</table>
+			</div>
+			<div id="draggable2" class="window works" style="display:none;">
+				<div class="barra-superior">
+					<input type="file" name="">
+					<p>Trabajos del curso</p>
+					<span id="exit2" class="icon-cancel"></span>				
+				</div>
+				<div id="files" class="files">
+					<img class="file" src="img/file.png">
+					<img class="file" src="img/file.png">
+					<img class="file" src="img/file.png">
+					<img class="file" src="img/file.png">
+					<img class="file" src="img/file.png">
+					<img class="file" src="img/file.png">
+					<img class="file" src="img/file.png">
+					<img class="file" src="img/file.png">
+				</div>
+			</div>
+			<div class="noticias">
+				<span class="icon-newspaper"></span>
+				<div class="here-noticias">3</div>
+			</div>
+			<div class="items-noticias" style="display:none;">
+					<div class="item-noticia">
+						<div><img src=""></div>
+						<div><h2></h2><p></p></div>
+					</div>
+					<div class="item-noticia"></div>
+					<div class="item-noticia"></div>
+			</div>
+			<div class="cairo-dock secundary"></div>
+			<div class="cairo-dock">
+				<div class="icon-c c1"><img src="img/contact-icon.png"></div>
+				<div class="icon-c c2"><img src="img/folder-icon.png"></div>
+			</div>
+	<script>
+		$( "#draggable" ).on( "click", function() {
+		  $( ".window" ).css("z-index","3");
+		  $( this ).css("z-index","5");
+		});
+		$( ".c1" ).on( "click", function() {
+		  $( ".window" ).css("z-index","3");
+		  $( ".contacts" ).css("z-index","5");
+		});
+	</script>
+		<script>
+		$( "#draggable2" ).on( "click", function() {
+		  $( ".window" ).css("z-index","3");
+		  $( this ).css("z-index","5");
+		});
+		$( ".c2" ).on( "click", function() {
+		  $( ".window" ).css("z-index","3");
+		  $( ".works" ).css("z-index","5");
+		});
+	</script>
+	<script>
+		$( ".noticias" ).on( "click", function() {
+		  $( ".items-noticias" ).toggle("speed");
+		});
+	</script>
+	<script>
+		$( ".c1" ).on( "click", function() {
+		  $( ".contacts" ).toggle();
+		});
+	</script>
+	<script>
+	$( "#exit1" ).on( "click", function() {
+	  $( ".contacts" ).toggle();
+	});
+	</script>
+
+	<script>
+	$( ".c2" ).on( "click", function() {
+	  $( ".works" ).toggle();
+	});
+	</script>
+	<script>
+	$( "#exit2" ).on( "click", function() {
+	  $( ".works" ).toggle();
+	});
+	</script>
+  <script>
+  $( function() {
+    $( "#draggable" ).draggable({ containment: "#body", scroll: false });
+  } );
+
+    $( function() {
+    $( "#draggable2" ).draggable({ containment: "#body", scroll: false });
+  } );
+
+  </script>
+<script>
+	var meses = new Array ("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+	var diasSemana = new Array("Dom","Lun","Mart","Miérc","Juev","Vier","Sáb");
+	var f=new Date();
+	document.getElementById("date").innerHTML = diasSemana[f.getDay()] + ", " + f.getDate() + " de " + meses[f.getMonth()] + " de " + f.getFullYear();
+</script>
+<script>
+  $( function() {
+    $( ".items-noticias" ).sortable({
+      revert: true
+    });
+    $( ".items-noticias" ).disableSelection();
+  } );
+</script>
+</body>
+</html>
